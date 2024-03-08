@@ -6,9 +6,10 @@ export default function Hero() {
   return (
     <div>
       <Search />
-      <title>Discover Your Next Car on the Blockchain</title>
+      <div style={{display: "flex", flexDirection: "column", alignItems:"center"}}>
+      <h1 className="h1-bold"> Discover Your Next Car on the Blockchain</h1>
       <Image
-        src="rotamLogo.svg"
+        src="mainCar.svg"
         width={200}
         height={200}
         alt="Main Car Image"
@@ -18,6 +19,7 @@ export default function Hero() {
         transaction is transparent, every car <br /> has a story, and every deal
         is sealed with trust.{" "}
       </p>
+      </div>
     </div>
   );
 }

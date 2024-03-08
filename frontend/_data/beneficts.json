@@ -1,0 +1,22 @@
+{
+    "recipes": [
+        {
+            "id":"1",
+            "image":"secure.svg",
+            "title":"Secure Transactions",
+            "description":"Enjoy peace of mind with blockchain-secured purchases ensuring your investment is protected at every step."
+        },
+        {
+            "id":"2",
+            "image":"confidence.svg",
+            "title":"Explore with Confidence",
+            "description":"Browse through a curated selection of cars with detailed histories and peer-to-peer verification."
+        },
+        {
+            "id":"3",
+            "image":"change.svg",
+            "title":"Drive the change",
+            "description":"Join us in shifting gearrs towards a more transparent, reliable, and user-empowered automotive future."
+        }
+    ]
+}
