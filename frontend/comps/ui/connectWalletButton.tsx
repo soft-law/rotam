@@ -2,6 +2,16 @@
 import React from "react";
 import { getWallets } from "@talismn/connect-wallets";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  // DialogDescription,
+  // DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function WalletConnnectButton() {
   const fetchWallets = async () => {
@@ -30,15 +40,23 @@ export default function WalletConnnectButton() {
   return (
     <div>
       <div style={{ display: "flex", flexDirection: "row" }}>
-        
-        <button onClick={fetchWallets}>
-        <Image
-          src="/Talisman-Icon-Red.svg"
-          width={100}
-          height={100}
-          alt="Picture of the author"
-          onClick={fetchWallets}
-        />Login</button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button >Connect Wallet</Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Select Wallet</DialogTitle>
+              <Image
+                src="/Talisman-Icon-Red.svg"
+                width={100}
+                height={100}
+                alt="Picture of the author"
+                onClick={fetchWallets}
+              />
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
