@@ -4,10 +4,10 @@ const TeamSection = () => {
   // Define team members
   const teamMembers = [
     { name: "Mario Andrade", role: "Founder, CEO" },
-    { name: "John Doe", role: "Developer" },
-    { name: "Jane Smith", role: "Designer" },
-    { name: "Jane Smith", role: "Designer" },
-    { name: "Jane Smith", role: "Designer" },
+    { name: "Nagra Rohit", role: "Smart-Contract Developer" },
+    { name: "Pat Sinma", role: "Product-Designer" },
+    { name: "Ganesh", role: "Back-End Developer" },
+    
     // Add more team members as needed
   ];
 
@@ -57,7 +57,7 @@ const TeamSection = () => {
           }}>
             <h2 style={{
               fontWeight: "700",
-              borderTop: "2px solid #1F353C", // Add a border top to create the line
+              borderTop: "1px solid #8975EA", // Add a border top to create the line
               paddingTop: "8px" // Add some space above the name
             }}>{member.name}</h2>
             <p>{member.role}</p>
