@@ -38,11 +38,11 @@ export default function WalletConnnectButton() {
   };
 
   return (
-    <div>
-      <div style={{ display: "flex", flexDirection: "row" }}>
+    
+    <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
         <Dialog>
           <DialogTrigger asChild>
-            <Button >Connect Wallet</Button>
+            <Button style={{backgroundColor:"#3D6470", borderRadius:"1.5rem", width:"10rem"}}>Connect Wallet</Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -58,6 +58,6 @@ export default function WalletConnnectButton() {
           </DialogContent>
         </Dialog>
       </div>
-    </div>
+  
   );
 }

@@ -8,13 +8,13 @@
         },
         {
             "id":"2",
-            "image":"confidence.svg",
+            "image":"search.svg",
             "title":"Explore with Confidence",
             "description":"Browse through a curated selection of cars with detailed histories and peer-to-peer verification."
         },
         {
             "id":"3",
-            "image":"change.svg",
+            "image":"decentralize.png",
             "title":"Drive the change",
             "description":"Join us in shifting gearrs towards a more transparent, reliable, and user-empowered automotive future."
         }

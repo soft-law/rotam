@@ -5,21 +5,24 @@
             "brand":"BMW",
             "model": "Serie 3",
             "year":"2023",
-            "color":"Black."
+            "color":"Black.",
+            "image": "car1.png"
         },
         {
             "id":"2",
             "brand":"Volkswagen",
             "model": "Jetta",
             "year":"2022",
-            "color":"Red."
+            "color":"Red.",
+            "image": "car2.png"
         },
         {
             "id":"3",
             "brand":"Ford",
             "model": "Focus",
             "year":"2021",
-            "color":"Black."
+            "color":"Black.",
+            "image": "car3.svg"
         },
         {
             "id":"4",
@@ -27,7 +30,8 @@
             "brand":"Honda",
             "model": "Civic",
             "year":"2018",
-            "color":"Black."
+            "color":"Black.",
+            "image": "car4.svg"
         }
     ]
 }

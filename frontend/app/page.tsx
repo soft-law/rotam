@@ -1,7 +1,7 @@
 
 import Beneficts from "@/comps/beneficts";
 import Features from "@/comps/features";
-import Cars from "@/comps/features";
+import Cars from "@/comps/cars";
 import Header from "@/comps/header";
 import Hero from "@/comps/hero";
 import Sells from "@/comps/sells";
