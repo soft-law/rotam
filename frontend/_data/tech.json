@@ -4,19 +4,19 @@
             "id":"1",
             "title":"Unique Network",
             "description":"Give us the NFTs 2.0 that our customers needs.",
-            "image": "Unique.svg"
+            "image": "unique.png"
         },
         {
             "id":"2",
             "title":"Polkadot",
             "description":"Provide us the security in our protocol.",
-            "image": "Polkadot.svg"
+            "image": "polkadot.svg"
         },
         {
             "id":"3",
             "title":"Tanssi Network",
             "description":"Polkadot 2.0 Vision Apps not Chains.",
-            "image": "Tanssi.svg"
+            "image": "tanssi.png"
         }
     ]
 }

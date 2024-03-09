@@ -11,15 +11,19 @@ export default function CarCards() {
     const [cars, setCars] = useState(data.recipes);
   
     return (
-      <div className="grid grid-cols-3 gap-8">
+      <div style={{ display: "flex", flexDirection: "row", gap: "8px" }}>
         {cars.map((car) => (
-          <Card key={car.id}>
-            <CardHeader>{car.brand} {car.model}</CardHeader>
+          <div style={{width:"20rem"}}>
+          <Card key={car.id} >
+            <CardHeader><img src={car.image} width="250rem"/></CardHeader>
             <CardContent>
+              <p>Brand: {car.brand} </p>
+              <p>Model: {car.model}</p>
               <p>Year: {car.year}</p>
               <p>Color: {car.color}</p>
             </CardContent>
           </Card>
+          </div>
         ))}
       </div>
     );

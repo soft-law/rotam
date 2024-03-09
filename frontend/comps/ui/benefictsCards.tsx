@@ -1,25 +1,33 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import data from "../../_data/beneficts.json";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export default function BenefictsCards() {
   const [beneficts, setBeneficts] = useState(data.recipes);
 
   return (
-    <div className="grid grid-cols-3 gap-8">
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        gap: "8px",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "35rem",
+      }}
+    >
       {beneficts.map((benefict) => (
-        <Card key={benefict.id}>
-          <CardHeader>{benefict.title}</CardHeader>
-          <CardContent>
-            <img src={benefict.image} alt={benefict.title} />
-            <p>{benefict.description}</p>
-          </CardContent>
-        </Card>
+        <div style={{ width: "20rem"}}>
+          <Card key={benefict.id} style={{height:"28rem"}}>
+            <CardHeader> <img src={benefict.image} alt={benefict.title} /></CardHeader>
+            <CardContent>
+             
+              <p style={{fontWeight:"bold", margin:"1rem 0 2rem 0"}}>{benefict.title}</p>
+              <p>{benefict.description}</p>
+            </CardContent>
+          </Card>
+        </div>
       ))}
     </div>
   );

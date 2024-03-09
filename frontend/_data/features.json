@@ -4,19 +4,19 @@
             "id":"1",
             "title":"Vehicle Valuation & Verification",
             "description":"Upload your car to the marketplace by submittin your vehicle for a quick verification covering legal, mechanical and aesthetic aspects. Set your price based on our suggested valuation or choose your own.",
-            "image": "valuation.svg"
+            "image": "HIW1.svg"
         },
         {
             "id":"2",
             "title":"Escrow creation",
             "description":"Buyers show interest through a secure escrow smart contract, ensuring safe transaction terms.",
-            "image": "Escrow.svg"
+            "image": "HIW2.svg"
         },
         {
             "id":"3",
             "title":"Close & Collect",
             "description":"We handle the paperwork and delivery. Once everything´s finalized, recieve your payment seamlessly and securely.",
-            "image": "closeCollect.svg"
+            "image": "HIW3.svg"
         }
     ]
 }
