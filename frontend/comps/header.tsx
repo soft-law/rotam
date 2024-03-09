@@ -10,7 +10,7 @@ export default function Header() {
 
 
   return (
-    <div style={{ display: "flex", flexDirection: "row", backgroundColor:"#E3D6FF"}}>
+    <div style={{ display: "flex", flexDirection: "row"}}>
       <div style={{ display: "flex", flexDirection: "row", margin: "3rem 7rem 3rem 1rem" }}>
         <div style={{margin:"1rem 0 0 3rem"}}>
         <Image src="/rotamLogo.svg" alt="rotam Logo" width={150} height={100} />

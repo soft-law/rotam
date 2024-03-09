@@ -6,10 +6,8 @@ export default function Hero() {
   return (
     <div
       style={{
-        backgroundColor: "#E3D6FF",
-        borderBottomRightRadius: "2rem",
-        borderBottomLeftRadius: "2rem",
-        height: "65rem",
+   
+        height: "60rem",
       }}
     >
       <Search />
