@@ -8,11 +8,7 @@ import Tech from "@/comps/tech";
 import TestimonialsSection from "@/comps/testimonial";
 import TeamSection from "@/comps/team";
 import Footer from "@/comps/footer";
-import MintNFT from "@/comps/ui/uniqueNetworkNFT";
 
-//style={{}}
-// background: rgb(227,214,255);
-//
 
 export default function Home() {
   return (
@@ -42,10 +38,6 @@ export default function Home() {
       <TestimonialsSection/>
       <TeamSection/>
       <Footer/>
-
-      {/* <h1 className="h1-bold">Rotam is here</h1>  */}
-
-      {/* <MintNFT/>  */}
     </div>
   );
 }
