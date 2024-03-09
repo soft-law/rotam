@@ -3,7 +3,8 @@ import TechCards from "./ui/techCards";
 
 export default function Tech(){
     const title = {
-        fontSize:"2.5rem"
+        fontSize:"2.5rem",
+        fontWeight: "bold"
     }
 
     const description = {

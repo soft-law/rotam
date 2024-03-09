@@ -6,7 +6,6 @@ export default function Hero() {
   return (
     <div
       style={{
-   
         height: "60rem",
       }}
     >
@@ -23,7 +22,7 @@ export default function Hero() {
           <p
             style={{
               color: "#0D47A1",
-              fontSize: "65px",
+              fontSize: "3.5rem",
               fontWeight: "bold",
             }}
           >
@@ -38,7 +37,7 @@ export default function Hero() {
             alt="Main Car Image"
           />
         </div>
-        <p >
+        <p style={{fontWeight: "bold", fontSize:"1rem"}} >
           Dive into a descentralized shoping experience <br /> where every
           transaction is transparent, every car <br /> has a story, and every
           deal is sealed with trust.{" "}

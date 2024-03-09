@@ -7,7 +7,8 @@ export default function TechCards() {
 
   const styleTitle ={
     color: "#0D47A1",
-    fontSize:"2rem"
+    fontSize:"2rem",
+    fontWeight: "bold",
   }
 
   const styleDescription ={

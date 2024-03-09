@@ -39,7 +39,7 @@ export default function WalletConnnectButton() {
 
   return (
     
-    <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+    <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginLeft:"3rem" }}>
         <Dialog>
           <DialogTrigger asChild>
             <Button style={{backgroundColor:"#3D6470", borderRadius:"1.5rem", width:"10rem"}}>Connect Wallet</Button>
