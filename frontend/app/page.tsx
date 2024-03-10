@@ -13,11 +13,6 @@ import Footer from "@/comps/footer";
 export default function Home() {
   return (
     <>
-    {/* <div
-     style={{
- backgroundColor: "#E8F5E9",
-   }}
-    > */}
       <div
         style={{
           background:
@@ -29,16 +24,24 @@ export default function Home() {
         <Header />
         <Hero />
       </div>
-      <Beneficts />
-      <Tech />
-      <Cars />
-      <Features />
+      <div
+        style={{
+          backgroundColor: "#E8F5E9",
+          margin:"0",
+          padding:"0"
+        }}
+      >
+        <Beneficts />
+        <Tech />
+        <Cars />
+        <Features />
+      </div>
       <Verification />
       <Partner />
       <TestimonialsSection />
       <TeamSection />
       <Footer />
-    {/* </div> */}
+      {/* </div> */}
     </>
   );
 }

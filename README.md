@@ -13,17 +13,22 @@ Rotam, a pioneering AppChain, is a second-hand vehicle marketplace that integrat
 
 3. Build the frontend
 
-4. Build the runtime with tanssi, polkadot sdk, and unique network nft pallet.
+4. Deloy a Container Chain with tanssi
 
-5. Start connecting the runtime with the frontend.
+5. Modify the run time with polkadot sdk, and unique network nft pallet.
 
+6. Start connecting the runtime with the frontend.
 
 # Litepaper
+https://docs.google.com/document/d/10IgqZ3qElb3w2ysAH4Y2X52NlFPX1NS7c74vTsGamgc/edit?usp=sharing
 
 # Pitch Deck
 
+# Rotam Chain
+https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffraa-dancebox-3090-rpc.a.dancebox.tanssi.network#/accounts
+
 # Team:
 - Mario Andrade, CEO and Dev.
-- Pat, Product and Branding Designer
-- Ganesh Oli, Substrate Developer.
+- Pat Sinma, Product and Branding Designer
+- Ganesh Oli, Polkadot Developer.
 - Nagra Rohit, Frontend and SmartContract Dev.

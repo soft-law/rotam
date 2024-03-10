@@ -1,6 +1,5 @@
 import React from "react";
 import Search from "./ui/search";
-import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -30,10 +29,9 @@ export default function Hero() {
             Discover
             <br /> Your Next Car <br /> on the Blockchain
           </p>
-          <Image
-            src="mainCar.svg"
-            width={800}
-            height={800}
+          <img
+            src="mainCar.png"
+            style={{width:"100%"}}
             alt="Main Car Image"
           />
         </div>
