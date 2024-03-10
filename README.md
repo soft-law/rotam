@@ -13,7 +13,7 @@ Rotam, a pioneering AppChain, is a second-hand vehicle marketplace that integrat
 
 3. Build the frontend
 
-4. Deloy a Container Chain with tanssi
+4. Deploy a Container Chain with tanssi
 
 5. Modify the run time with polkadot sdk, and unique network nft pallet.
 

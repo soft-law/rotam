@@ -22,16 +22,16 @@ const keyring = new Keyring({ type: "sr25519" });
 // mintNFT (collection, item, mintTo, witnessData )
 export const mintNFT = async () => {
   const api = await polkprovider();
-  await api.tx.nfts.mint(
+  const mint = await api.tx.nfts.mint(
     7,
     6,
     "5H9gzsvL5BFX6nXspUMqeCVGjVpacEtjAKGTWUwTMpL5mtaD",
     {}
   );
+  return mint;
 };
 
 export const main = async () => {
-
   // Create mnemonic string for Alice using BIP39
   const mnemonicAlice = mnemonicGenerate();
 
@@ -52,9 +52,10 @@ export const main = async () => {
   // Create a keyring instance (SR25519)
   // Import SR25519 account from mnemonic
   const keyring = new Keyring({ type: "sr25519" });
-  const mnemonic = "5H9gzsvL5BFX6nXspUMqeCVGjVpacEtjAKGTWUwTMpL5mtaD";
 
   // Extract SR25519 address from mnemonic
   const newPair = keyring.addFromUri(`${mnemonicAlice}`);
   console.log(`Derived SR25519 Address from Mnemonic: ${newPair.address}`);
 };
+
+

@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Rotam",
-  description: "Encode Polkadot Hackathon",
+  description: "Second-Hand car marketplace secured by Polkadot",
 };
 
 export default function RootLayout({
