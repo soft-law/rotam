@@ -18,8 +18,8 @@ export default function BenefictsCards() {
       }}
     >
       {beneficts.map((benefict) => (
-        <div style={{ width: "20rem"}}>
-          <Card key={benefict.id} style={{height:"28rem"}}>
+        <div style={{ width: "20rem"}} key={benefict.id}>
+          <Card  style={{height:"28rem"}}>
             <CardHeader> <img src={benefict.image} alt={benefict.title} /></CardHeader>
             <CardContent>
              

@@ -13,8 +13,8 @@ export default function CarCards() {
     return (
       <div style={{ display: "flex", flexDirection: "row", gap: "8px" }}>
         {cars.map((car) => (
-          <div style={{width:"20rem"}}>
-          <Card key={car.id} >
+          <div style={{width:"20rem"}} key={car.id}>
+          <Card  >
             <CardHeader><img src={car.image} width="250rem"/></CardHeader>
             <CardContent>
               <p>Brand: {car.brand} </p>

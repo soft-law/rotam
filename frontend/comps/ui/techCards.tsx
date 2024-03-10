@@ -25,7 +25,7 @@ export default function TechCards() {
       }}
     >
       {techs.map((tech) => (
-        <div style={{ display: "flex", flexDirection: "row", width: "33rem" }}>
+        <div style={{ display: "flex", flexDirection: "row", width: "33rem" }} key={tech.id}>
           <img src={tech.image} alt={tech.title} style={{ width: "12rem" }}/>
           <div style={{ margin: "2rem" }}>
             <p style={styleTitle}>{tech.title}</p>
