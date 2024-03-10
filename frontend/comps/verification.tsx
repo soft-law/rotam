@@ -1,13 +1,15 @@
-import Image from "next/image";
+"use client"
+import { polkprovider } from "./functions/Polkprovider";
 
 const Verification = () => {
+
   return (
     <div
       style={{
         width: "100%",
         position: "relative",
         backgroundColor: "#2f505a",
-        height: "512px",
+        height: "35rem",
         overflow: "hidden",
         flexShrink: "0",
         textAlign: "left",
@@ -16,10 +18,9 @@ const Verification = () => {
         fontFamily: "",
       }}
     >
-      <Image
-        width={325.4}
-        height={576.88}
+      <img
         style={{
+          width:"30%",
           position: "absolute",
           top: "15.02%",
           right: "58.24%",
@@ -48,7 +49,7 @@ const Verification = () => {
       >
         <div
           style={{
-            width: "954px",
+             width: "954px",
             position: "relative",
             lineHeight: "97%",
             fontWeight: "600",
@@ -61,8 +62,8 @@ const Verification = () => {
         </div>
         <div
           style={{
-            width: "396px",
-            position: "relative",
+             width: "396px",
+             position: "relative",
             fontSize: "20px",
             color: "#eff4f6",
             display: "inline-block",
@@ -85,7 +86,7 @@ const Verification = () => {
             color: "#1f353c",
           }}
         >
-          <div style={{ position: "relative" }}>Ask for Verification</div>
+          <div onClick={polkprovider} style={{ position: "relative" }}>Ask for Verification</div>
         </div>
       </div>
     </div>

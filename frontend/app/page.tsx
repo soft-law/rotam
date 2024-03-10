@@ -3,7 +3,6 @@ import Features from "@/comps/features";
 import Cars from "@/comps/cars";
 import Header from "@/comps/header";
 import Hero from "@/comps/hero";
-import Sells from "@/comps/sells";
 import Tech from "@/comps/tech";
 import Verification from "@/comps/verification";
 import Partner from "@/comps/PartnerDao";
@@ -13,11 +12,12 @@ import Footer from "@/comps/footer";
 
 export default function Home() {
   return (
-    <div
-      style={{
-        backgroundColor: "#E8F5E9",
-      }}
-    >
+    <>
+    {/* <div
+     style={{
+ backgroundColor: "#E8F5E9",
+   }}
+    > */}
       <div
         style={{
           background:
@@ -33,12 +33,12 @@ export default function Home() {
       <Tech />
       <Cars />
       <Features />
-      <Sells />
       <Verification />
       <Partner />
       <TestimonialsSection />
       <TeamSection />
       <Footer />
-    </div>
+    {/* </div> */}
+    </>
   );
 }
