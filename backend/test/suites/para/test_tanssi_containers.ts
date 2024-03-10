@@ -261,14 +261,15 @@ describeSuite({
                 // But registered does not contain 2002 yet
                 // TODO: fix once we have types
                 expect(registered3.toJSON().includes(2002)).to.be.false;
-                // Container chain will be registered after 2 sessions, but because `signAndSendAndInclude` waits
-                // until the block that includes the extrinsic is finalized, it is possible that we only need to wait
-                // 1 session. So use a callback to wait 1 or 2 sessions.
-                await waitSessions(context, paraApi, 2, async () => {
-                    const registered = await paraApi.query.registrar.registeredParaIds();
-                    // Stop waiting when 2002 is registered
-                    return registered.toJSON().includes(2002);
-                });
+
+                // The node starts one session before the container chain is in registered list
+                await waitSessions(context, paraApi, 1);
+                // Not registered yet, still pending
+                const registered4 = await paraApi.query.registrar.registeredParaIds();
+                // TODO: fix once we have types
+                expect(registered4.toJSON().includes(2002)).to.be.false;
+
+                await waitSessions(context, paraApi, 1);
                 // Check that registered para ids contains 2002
                 const registered5 = await paraApi.query.registrar.registeredParaIds();
                 // TODO: fix once we have types
@@ -321,14 +322,7 @@ describeSuite({
 
                 const tx = paraApi.tx.registrar.deregister(2002);
                 await signAndSendAndInclude(paraApi.tx.sudo.sudo(tx), alice);
-                // Container chain will be deregistered after 2 sessions, but because `signAndSendAndInclude` waits
-                // until the block that includes the extrinsic is finalized, it is possible that we only need to wait
-                // 1 session. So use a callback to wait 1 or 2 sessions.
-                await waitSessions(context, paraApi, 2, async () => {
-                    const registered = await paraApi.query.registrar.registeredParaIds();
-                    // Stop waiting if 2002 is no longer registered
-                    return !registered.toJSON().includes(2002);
-                });
+                await waitSessions(context, paraApi, 2);
                 const blockNum = (await paraApi.rpc.chain.getBlock()).block.header.number.toNumber();
                 blockNumber2002End = blockNum;
 

@@ -30,6 +30,12 @@ pub use sp_runtime::BuildStorage;
 
 pub mod migrations;
 
+use pallet_nfts::PalletFeatures;
+
+/// Constant values used within the runtime.
+pub mod constants;
+use constants::{currency::*, time::*};
+
 pub use sp_runtime::{MultiAddress, Perbill, Permill};
 use {
     cumulus_pallet_parachain_system::RelayNumberStrictlyIncreases,
@@ -41,7 +47,7 @@ use {
         pallet_prelude::DispatchResult,
         parameter_types,
         traits::{
-            ConstBool, ConstU128, ConstU32, ConstU64, ConstU8, Contains, InsideBoth, InstanceFilter,
+            ConstBool, ConstU128, ConstU32, ConstU64, ConstU8, Contains, InsideBoth, InstanceFilter, AsEnsureOriginWithArg
         },
         weights::{
             constants::{
@@ -54,7 +60,7 @@ use {
     },
     frame_system::{
         limits::{BlockLength, BlockWeights},
-        EnsureRoot,
+        EnsureRoot, EnsureSigned,
     },
     nimbus_primitives::{NimbusId, SlotBeacon},
     pallet_transaction_payment::{ConstFeeMultiplier, CurrencyAdapter, Multiplier},
@@ -212,7 +218,7 @@ pub const VERSION: RuntimeVersion = RuntimeVersion {
     spec_name: create_runtime_str!("container-chain-template"),
     impl_name: create_runtime_str!("container-chain-template"),
     authoring_version: 1,
-    spec_version: 600,
+    spec_version: 401,
     impl_version: 0,
     apis: RUNTIME_API_VERSIONS,
     transaction_version: 1,
@@ -637,6 +643,48 @@ impl pallet_multisig::Config for Runtime {
 
 impl_tanssi_pallets_config!(Runtime);
 
+parameter_types! {
+    pub const CollectionDeposit: Balance = 100 * DOLLARS;
+    pub const ItemDeposit: Balance = 1 * DOLLARS;
+	pub Features: PalletFeatures = PalletFeatures::all_enabled();
+	pub const MaxAttributesPerCall: u32 = 10;
+    pub const MetadataDepositBase: Balance = 10 * DOLLARS;
+    pub const MetadataDepositPerByte: Balance = 1 * DOLLARS;
+    pub const ApprovalsLimit: u32 = 20;
+    pub const ItemAttributesApprovalsLimit: u32 = 20;
+    pub const MaxTips: u32 = 10;
+    pub const MaxDeadlineDuration: BlockNumber = 12 * 30 * DAYS;
+}
+
+impl pallet_nfts::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+	type CollectionId = u32;
+	type ItemId = u32;
+	type Currency = Balances;
+	type ForceOrigin = frame_system::EnsureRoot<AccountId>;
+	type CollectionDeposit = CollectionDeposit;
+	type ItemDeposit = ItemDeposit;
+	type MetadataDepositBase = MetadataDepositBase;
+	type AttributeDepositBase = MetadataDepositBase;
+	type DepositPerByte = MetadataDepositPerByte;
+	type StringLimit = ConstU32<256>;
+	type KeyLimit = ConstU32<64>;
+	type ValueLimit = ConstU32<256>;
+	type ApprovalsLimit = ApprovalsLimit;
+	type ItemAttributesApprovalsLimit = ItemAttributesApprovalsLimit;
+	type MaxTips = MaxTips;
+	type MaxDeadlineDuration = MaxDeadlineDuration;
+	type MaxAttributesPerCall = MaxAttributesPerCall;
+	type Features = Features;
+	type OffchainSignature = Signature;
+	type OffchainPublic = <Signature as Verify>::Signer;
+	type WeightInfo = pallet_nfts::weights::SubstrateWeight<Runtime>;
+	#[cfg(feature = "runtime-benchmarks")]
+	type Helper = ();
+	type CreateOrigin = AsEnsureOriginWithArg<EnsureSigned<AccountId>>;
+	type Locker = ();
+}
+
 // Create the runtime by composing the FRAME pallets that were previously configured.
 construct_runtime!(
     pub enum Runtime
@@ -678,6 +726,8 @@ construct_runtime!(
         RootTesting: pallet_root_testing = 100,
         AsyncBacking: pallet_async_backing::{Pallet, Storage} = 110,
 
+        Nfts: pallet_nfts = 111,
+
     }
 );
 
@@ -700,6 +750,7 @@ mod benches {
         [pallet_xcm_benchmarks::generic, pallet_xcm_benchmarks::generic::Pallet::<Runtime>]
         [pallet_assets, ForeignAssets]
         [pallet_asset_rate, AssetRate]
+        [pallet_nfts, Nfts]
     );
 }
 
