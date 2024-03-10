@@ -12,6 +12,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { mintNFT, main } from "../functions/Polkprovider";
 
 export default function WalletConnnectButton() {
   const fetchWallets = async () => {
@@ -54,6 +55,8 @@ export default function WalletConnnectButton() {
                 alt="Picture of the author"
                 onClick={fetchWallets}
               />
+
+              <button onClick={main}>create nft</button>
             </DialogHeader>
           </DialogContent>
         </Dialog>
